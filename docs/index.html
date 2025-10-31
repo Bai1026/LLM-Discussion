@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Discussion: Enhancing Creativity via Discussion Framework and Role-Play</title>
+
+    <!-- Placeholder Icon -->
+    <link rel="icon" type="image/png" href="img/logo_placeholder.png">
+    <link rel="shortcut icon" type="image/png" href="img/logo_placeholder.png">
+    <link rel="apple-touch-icon" href="img/logo_placeholder.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0ea5e9, #22d3ee); /* Blue gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background-color: #0ea5e9; /* Match gradient's main color */
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #0284c7;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: white;
+            color: #0ea5e9;
+            border: 1px solid #0ea5e9;
+        }
+        .btn-secondary:hover {
+            background-color: #f0f9ff;
+            transform: translateY(-2px);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            font-weight: 600;
+            color: #111827;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="py-12 bg-white border-b">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                <div class="flex items-center justify-center gap-x-4 mb-2">
+                    <span class="gradient-text">LLM Discussion</span>
+                    <img src="img/logo_placeholder.png" alt="Logo" class="w-12 h-12" onerror="this.onerror=null;this.src='https://placehold.co/80x80/EFEFEF/333333?text=Logo';">
+                </div>
+                Enhancing the Creativity of Large Language Models<br class="hidden md:block"> via Discussion Framework and Role-Play
+            </h1>
+            <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                A three-phase discussion framework that enhances creativity by emulating the human process of collective brainstorming and using role-play to combat LLM homogeneity.
+            </p>
+            <div class="mt-8">
+                <p class="text-md font-medium text-gray-800">
+                    Li-Chun Lu*, Shou-Jen Chen*, Tsung-Min Pai, Chan-Hung Yu, Hung-Yi Lee, Shao-Hua Sun
+                </p>
+                <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                    Department of Electrical Engineering, National Taiwan University
+                </p>
+            </div>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="https://arxiv.org/abs/2405.06373" target="_blank" rel="noopener" class="btn btn-primary">Read Paper</a>
+                <a href="https://github.com/lawraa/LLM-Discussion" target="_blank" rel="noopener" class="btn btn-secondary">Get Code</a>
+                <a href="#bibtex" class="btn btn-secondary">Cite Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+
+        <!-- Teaser Image Section -->
+        <section id="teaser" class="mb-16 md:mb-24">
+            <h2 class="section-title">Core Concept</h2>
+            <div class="card p-4">
+                <img src="img/teaser.png" alt="LLM Discussion Method Diagram" class="rounded-lg shadow-lg w-1/2 max-w-3xl mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/EFEFEF/333333?text=Teaser+Diagram+(Fig+1)';">
+                <p class="text-center text-gray-500 mt-4 text-sm">
+                    By simulating human collective intelligence, LLM Discussion uses a three-phase process (Initiation, Discussion, Convergence) and assigns distinct roles (e.g., Academic Researcher, Environmentalist, Visionary Billionaire) to generate diverse and creative ideas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Abstract / About Section -->
+        <section id="about" class="mb-16 md:mb-24">
+            <h2 class="section-title">Introduction</h2>
+            <div class="card p-8 text-lg text-gray-700 leading-relaxed space-y-6">
+
+                <h3 class="text-xl font-semibold text-gray-900">The Promise of Creative AI</h3>
+                <p class="text-gray-700">
+                    Large language models (LLMs) have emerged as highly efficient tools in addressing daily challenges across various applications, demonstrating exceptional capabilities in natural language processing (Lappuin, 2024; Yang et al., 2023b). Specifically, LLMs achieve excellent performance in language comprehension tasks, such as sentiment analysis (Zhang et al., 2023a) and question answering (Qin et al., 2023), and are widely adopted in content generation tasks — from writing articles to composing poetry — by producing coherent and contextually relevant text that closely mimics human-written content (Qin et al., 2023; Yuan et al., 2022).
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900">Multi-LLM Paradigms: Promise and Limitations</h3>
+                <p class="text-gray-700">
+                    Recent studies highlight the potential of multi-LLM paradigms, which aim to simulate human collective intelligence by engaging multiple LLMs in iterative discussion to arrive at more comprehensive and well-balanced solutions. This paradigm allows systems to generate a broader range of ideas beyond what a single model can reach (Du et al., 2023; Liu et al., 2023b; Sun et al., 2023).
+                </p>
+
+                <p class="text-gray-700">
+                    In the context of creativity, these frameworks often assign diverse roles to LLMs and employ structured, multi-round interactions. For example, one LLM may act as a creative professional while another serves as an environmentalist, enabling the system to explore and integrate multiple perspectives through iterative exchanges.
+                </p>
+
+                <div class="rounded-lg border border-red-200 bg-red-50 p-4">
+                    <div class="flex items-start gap-3">
+                        <div class="text-red-600 font-bold">⚠️</div>
+                        <div>
+                            <div class="font-semibold text-red-800">The Challenge</div>
+                            <p class="text-red-700 mt-2">
+                                Despite these advantages, multi-LLM frameworks face two major challenges. First, many modern LLMs are not specifically trained or reinforced for sustained multi-turn conversations, which can lead to unengaging discussions that quickly converge (Ouyang et al., 2022; Ding et al., 2023). Second, the high homogeneity of LLMs makes it difficult for discussions to diverge and produce creative outcomes, as agents often generate similar responses (Ouyang et al., 2022; Padmakumar & He, 2024).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-900">LLM Discussion</h3>
+                <p class="text-gray-700">
+                    To address these issues, we develop a role-play enhanced LLM discussion framework, dubbed <strong class="text-sky-600">LLM Discussion</strong>, as illustrated in Figure 1. To facilitate vigorous and diverging exchanges throughout rounds of discussion and ensure convergence to creative answers, we arrange a three-phase discussion and design prompts specialized in the initiation phase, the discussion phase, and the convergence phase.
+                </p>
+
+                <p class="text-gray-700">
+                    To tackle LLM homogeneity, we adopt a role-playing technique, an established practice in Design Thinking (Camacho, 2016). Specifically, we assign a diverse set of roles with distinct backgrounds and perspectives to LLM agents participating in a discussion, such as Visionary Millionaire and Futurist, and roles specialized for various facets of discussion inspired by methods like Six Thinking Hats (Setyaningtyas & Radia, 2019).
+                </p>
+
+                <div class="rounded-lg border border-green-200 bg-green-50 p-4">
+                    <div class="font-semibold text-green-800 mb-2">✨ Our Contributions</div>
+                    <ul class="list-disc list-inside text-green-700 space-y-2">
+                        <li><strong>Framework:</strong> We propose LLM Discussion, a role-play enhanced, three-phase discussion framework that encourages divergent exchanges and converges to creative answers.</li>
+                        <li><strong>Role-Play:</strong> We introduce a role assignment mechanism to increase diversity among agents and mitigate LLM homogeneity.</li>
+                        <li><strong>Evaluation:</strong> We evaluate on four creativity benchmarks adapted from the Wallach–Kogan Creativity Test and report both LLM and human evaluations on Originality, Elaboration, Fluency, and Flexibility.</li>
+                        <li><strong>Results:</strong> Experiments and human studies demonstrate that LLM Discussion outperforms baselines in producing creative answers across multiple metrics.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Method Section -->
+        <section id="method" class="mb-16 md:mb-24">
+            <h2 class="section-title">Method</h2>
+                <div class="card p-8">
+                <div class="grid grid-cols-1 gap-8">
+                    <!-- Discussion Framework -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">💬 Three-Phase Discussion Framework</h3>
+                        <p class="text-gray-700 mb-4">
+                            To foster meaningful interaction and avoid rapid convergence, we designed a three-phase process:
+                        </p>
+                        <ul class="list-decimal list-inside space-y-2 text-gray-600">
+                            <li><strong>Initiation Phase:</strong> Introduce the topic and objectives, establishing a consensus for group discussion.</li>
+                            <li><strong>Discussion Phase:</strong> Over multiple rounds, LLMs receive responses from other agents and build upon their ideas.</li>
+                            <li><strong>Convergence Phase:</strong> In the final round, summarize all ideas and converge on a collective, creative conclusion.</li>
+                        </ul>
+                        <img src="img/framework.png" alt="Framework Diagram" class="rounded-lg shadow-md w-full mt-6" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EFEFEF/333333?text=Framework+Diagram+(Fig+2)';">
+                    </div>
+
+                    <!-- Role-Play -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-green-800 mb-4">🎭 Role-Playing Mechanism</h3>
+                        <p class="text-gray-700 mb-4">
+                            To overcome the "homogeneity" problem where LLMs think alike, we introduce role-play. This helps generate fundamentally diverse perspectives.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li><strong>Diverse Roles:</strong> We automatically generate a set of roles with diverse backgrounds and perspectives (e.g., Visionary Billionaire, Startup Founder, Environmentalist).</li>
+                            <li><strong>Role Prompt:</strong> Each LLM is assigned a role before the discussion and reminded of its identity each round to ensure its responses align with the persona.</li>
+                        </ul>
+                        <img src="img/roles.png" alt="Role Assignment Diagram" class="rounded-lg shadow-md w-1/2 mx-auto mt-6" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EFEFEF/333333?text=Role+Assignment+(Fig+3)';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benchmarks & Metrics Section -->
+        <section id="benchmarks" class="mb-16 md:mb-24">
+            <h2 class="section-title">Evaluation</h2>
+            <div class="card p-8">
+                <h3 class="text-2xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                    <span>Creativity Benchmarks</span>
+                    <!-- <button @click="benchmarkModalOpen = true" class="w-6 h-6 rounded-full bg-indigo-200 text-indigo-700 text-sm font-bold flex items-center justify-center hover:bg-indigo-300 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400" title="Why these benchmarks?">
+                        ?
+                    </button> -->
+                </h3>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Benchmark</th>
+                                <th>Description</th>
+                                <th>Sample Task</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-semibold">AUT</td>
+                                <td>Evaluates divergent thinking by requiring the generation of numerous unconventional applications for an object.</td>
+                                <td>What are some creative uses for a mug?</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">INSTANCES</td>
+                                <td>Measures the ability to produce a diverse set of examples that satisfy a given property.</td>
+                                <td>Name 5 square things you can think of.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">SIMILARITIES</td>
+                                <td>Assesses associative creativity by challenging participants to identify non-obvious connections between two concepts.</td>
+                                <td>Tell me 5 ways in which a brick and a stone are alike.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">SCIENTIFIC</td>
+                                <td>Probes creative problem-solving within a scientific framework.</td>
+                                <td>Find different scientific uses for a spoon.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="text-2xl font-bold mt-12 mb-6 text-center flex items-center justify-center gap-2">
+                    <span>Evaluation Metrics</span>
+                    <!-- <button @click="metricsModalOpen = true" class="w-6 h-6 rounded-full bg-purple-200 text-purple-700 text-sm font-bold flex items-center justify-center hover:bg-purple-300 transition-all focus:outline-none focus:ring-2 focus:ring-purple-400" title="Why only these metrics?">
+                        ?
+                    </button> -->
+                </h3>
+                <!-- <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg border">
+                        <h4 class="font-bold text-xl mb-2 text-indigo-700">Originality</h4>
+                        <p class="text-gray-600">Assesses the statistical rarity or unconventionality of a response. Ideas are scored based on novelty and divergence from common answers.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border">
+                        <h4 class="font-bold text-xl mb-2 text-indigo-700">Elaboration</h4>
+                        <p class="text-gray-600">Measures the level of detail and supportive information. It evaluates the ability to expand upon a core idea with depth and context.</p>
+                    </div>
+                </div> -->
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg border">
+                        <h4 class="font-bold text-xl mb-2 text-sky-700">Originality</h4>
+                        <p class="text-gray-600">Assesses the novelty and unconventionality of responses.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border">
+                        <h4 class="font-bold text-xl mb-2 text-sky-700">Elaboration</h4>
+                        <p class="text-gray-600">Measures the amount of detail used to extend a response.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border">
+                        <h4 class="font-bold text-xl mb-2 text-sky-700">Fluency</h4>
+                        <p class="text-gray-600">Measures the number of relevant responses.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6 rounded-lg border">
+                        <h4 class="font-bold text-xl mb-2 text-sky-700">Flexibility</h4>
+                        <p class="text-gray-600">Measures the variety of categories or perspectives in responses.</p>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mt-12 mb-6 text-center flex items-center justify-center gap-2">
+                    <span>Evaluation Method</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg border">
+                        <h4 class="font-bold text-xl mb-2 text-purple-700">LLM Evaluation</h4>
+                        <p class="text-gray-600">Using <strong>gpt-3.5-turbo-0125</strong> as a judge, we score all generated responses based on the defined metrics.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border">
+                        <h4 class="font-bold text-xl mb-2 text-purple-700">Human Evaluation</h4>
+                        <p class="text-gray-600">We conducted a comprehensive human evaluation, collecting over 1,400 assessments from 42 annotators using the same TTCT-based rubric.</p>
+                    </div>
+            </div>
+        </section>
+
+        <!-- Baselines Section -->
+        <section id="baselines" class="mb-16 md:mb-24">
+            <h2 class="section-title">Baselines</h2>
+            <div class="card p-8">
+                <p class="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
+                    We compare LLM Discussion with several single-agent and multi-agent frameworks.
+                </p>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-indigo-500 pl-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Single Agent</h3>
+                        <p class="text-gray-600">A single LLM agent using a zero-shot prompt to solve the task.</p>
+                    </div>
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Brainstorm, then Select</h3>
+                        <p class="text-gray-600">A single-LLM framework designed for AUT, which includes a selection phase to judge the creativity of potential solutions.</p>
+                    </div>
+                    <div class="border-l-4 border-red-500 pl-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">LLM Debate</h3>
+                        <p class="text-gray-600">A multi-LLM framework aimed at improving factuality and reasoning. Agents check others' responses for correctness rather than building on their ideas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Results Section -->
+        <section id="results" class="mb-16 md:mb-24">
+            <h2 class="section-title">Results</h2>
+            <div class="card p-4">
+                <h3 class="text-2xl font-bold mt-12 mb-6 text-center flex items-center justify-center gap-2">
+                    <span>Main Results</span>
+                </h3>
+                    <img src="img/main_result.png" alt="Main evaluation results table" class="rounded-lg shadow-lg w-full" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/EFEFEF/333333?text=Main+Results+(Table+2)';">
+                    <p class="text-center text-gray-500 mt-4 text-sm px-4">
+                        LLM Evaluation Results. LLM Discussion surpasses all baselines in Originality across all four benchmarks and achieves the best Elaboration scores on three benchmarks.
+                    </p>
+                <h3 class="text-2xl font-bold mt-12 mb-6 text-center flex items-center justify-center gap-2">
+                    <span>Qualitative Results</span>
+                </h3>
+                    <img src="img/qualitative.png" alt="Qualitative comparison of generated responses" class="rounded-lg shadow-lg w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x500/EFEFEF/333333?text=Qualitative+Results+(Fig+4)';">
+                    <p class="text-center text-gray-500 mt-4 text-sm px-4 flex-grow">
+                        A comparison of responses for the AUT and SCIENTIFIC benchmarks. LLM Discussion generates more innovative and detailed ideas (e.g., "Towel Storybook Quilt") compared to the more common responses from baselines.
+                    </p>
+                <h3 class="text-2xl font-bold mt-12 mb-6 text-center flex items-center justify-center gap-2">
+                    <span>LLM & Human Alignment</span>
+                </h3>
+                    <img src="img/alignment.png" alt="Chart showing correlation between LLM and human evaluations" class="rounded-lg shadow-lg w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x500/EFEFEF/333333?text=Alignment+Chart+(Table+4+Data)';">
+                    <p class="text-center text-gray-500 mt-4 text-sm px-4 flex-grow">
+                        Kendall's τ correlation shows a strong alignment between LLM and average human judgments for Originality, Fluency, and Flexibility. This suggests LLM evaluation is a reliable proxy for human assessment.
+                    </p>
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section id="analysis" class="mb-16 md:mb-24">
+            <h2 class="section-title">Analysis</h2>
+            <p class="text-center text-gray-600 -mt-6 mb-8 max-w-2xl mx-auto">
+                We conducted ablation studies to determine the optimal settings for our main experiments.
+            </p>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Rounds Analysis -->
+                <div class="card p-4 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Analysis of Discussion Rounds</h3>
+                    <img src="img/ablation_rounds.png" alt="Analysis of discussion rounds" class="rounded-lg shadow-lg w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EFEFEF/333333?text=Rounds+Analysis+(Fig+5)';">
+                    <p class="text-center text-gray-500 mt-4 text-sm px-4 flex-grow">
+                        Originality increases with more discussion rounds, but Elaboration decreases after 5 rounds. We chose 5 rounds as a balance.
+                    </p>
+                </div>
+                <!-- Agents Analysis -->
+                <div class="card p-4 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Analysis of Agent Count</h3>
+                    <img src="img/ablation_agents.png" alt="Analysis of number of agents" class="rounded-lg shadow-lg w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EFEFEF/333333?text=Agents+Analysis+(Fig+6)';">
+                    <p class="text-center text-gray-500 mt-4 text-sm px-4 flex-grow">
+                        With 5 discussion rounds, using 4 LLM agents achieved the best overall performance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section id="conclusion" class="mb-16 md:mb-24">
+            <h2 class="section-title">Conclusion</h2>
+            <div class="card p-8 text-lg text-gray-700 leading-relaxed space-y-4 max-w-4xl mx-auto">
+                <p>
+                    We proposed <strong class="text-sky-600">LLM Discussion</strong>, a method to enhance LLM creativity by emulating the human discussion process.
+                </p>
+                <p>
+                    Our three-phase framework facilitates multi-round, interactive discussions, while the role-play mechanism effectively mitigates LLM homogeneity.
+                </p>
+                <p>
+                    Through LLM evaluation and human studies, our framework outperforms single-LLM and existing multi-LLM frameworks on Originality and Elaboration across four creativity benchmarks.
+                </p>
+            </div>
+        </section>
+
+        <!-- Citing Section -->
+        <section id="bibtex" class="mb-16 md:mb-24">
+            <h2 class="section-title">How to Cite</h2>
+            <div class="card p-6">
+                <h3 id="paper" class="text-2xl font-bold mb-4 text-center">📄 Paper</h3>
+                <p class="text-center mb-6"><a href="https://arxiv.org/abs/2405.06373" target="_blank" rel="noopener" class="text-sky-600 hover:underline font-semibold">[https://arxiv.org/abs/2405.06373]</a></p>
+                <h3 id="code" class="text-2xl font-bold mb-4 text-center">💻 Code</h3>
+                <p class="text-center mb-6"><a href="https://github.com/lawraa/LLM-Discussion" target="_blank" rel="noopener" class="text-sky-600 hover:underline font-semibold">[https://github.com/lawraa/LLM-Discussion]</a></p>
+
+                <h3 class="text-xl font-semibold mb-2">BibTeX</h3>
+                <pre class="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>@misc{lu2024llm,
+      title={LLM Discussion: Enhancing the Creativity of Large Language Models via Discussion Framework and Role-Play}, 
+      author={Li-Chun Lu and Shou-Jen Chen and Tsung-Min Pai and Chan-Hung Yu and Hung-yi Lee and Shao-Hua Sun},
+      year={2024},
+      eprint={2405.06373},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}</code></pre>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2024 Li-Chun Lu & et al.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
